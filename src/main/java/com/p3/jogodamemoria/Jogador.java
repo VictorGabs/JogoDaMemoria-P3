@@ -5,9 +5,9 @@ public class Jogador {
     private String nome;
     private int pontos;
 
-    public Jogador(String nome, int pontos) {
+    public Jogador(String nome) {
         this.nome = nome;
-        this.pontos = pontos;
+        this.pontos = 0;
     }
 
     public String getNome() {
@@ -23,6 +23,6 @@ public class Jogador {
     }
 
     public void setPontos(int pontos) {
-        this.pontos = pontos;
+        this.pontos += pontos;
     }
 }

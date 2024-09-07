@@ -11,7 +11,7 @@ public class JogoDaMemoriaApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(JogoDaMemoriaApplication.class.getResource("jogoDaMemoriaView.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 892, 700);
         stage.setTitle("Jogo da Memória");
         stage.setScene(scene);
         stage.show();

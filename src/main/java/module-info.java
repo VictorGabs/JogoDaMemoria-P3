@@ -10,6 +10,7 @@ module com.p3.jogodamemoria {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens com.p3.jogodamemoria to javafx.fxml;
     exports com.p3.jogodamemoria;

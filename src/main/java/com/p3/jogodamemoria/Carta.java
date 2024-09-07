@@ -12,4 +12,40 @@ public class Carta {
         this.coluna = coluna;
         this.foiCombinada = false;
     }
+
+    public Carta() {
+
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public int getLinha() {
+        return linha;
+    }
+
+    public void setLinha(int linha) {
+        this.linha = linha;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    public void setColuna(int coluna) {
+        this.coluna = coluna;
+    }
+
+    public Boolean getFoiCombinada() {
+        return foiCombinada;
+    }
+
+    public void setFoiCombinada(Boolean foiCombinada) {
+        this.foiCombinada = foiCombinada;
+    }
 }

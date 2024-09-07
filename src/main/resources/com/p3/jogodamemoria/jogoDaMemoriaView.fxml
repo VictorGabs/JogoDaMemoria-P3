@@ -1,19 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.p3.jogodamemoria.JogoController">
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-    <GridPane xmlns:fx="http://javafx.com/fxml"
-        alignment="CENTER" hgap="50" vgap="10"
-              fx:id="jogoGrid">
-        <padding>
-            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
-        </padding>
-    </GridPane>
-</VBox>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="892.0" style="-fx-background-color: #EAF4F4;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.p3.jogodamemoria.JogoController">
+   <children>
+      <GridPane id="jogoGrid" fx:id="jogoGrid" layoutX="323.0" layoutY="18.0" prefHeight="664.0" prefWidth="520.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="1.0" prefWidth="130.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="130.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="130.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+          <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+          <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+          <RowConstraints maxHeight="165.0" minHeight="3.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <ImageView id="00x00" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="00x01" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="00x02" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="00x03" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="01x00" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="01x01" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="01x02" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="01x03" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="02x00" fitHeight="149.0" fitWidth="122.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="02x01" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="02x02" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="02x03" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="03x00" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView id="03x01" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="03x02" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+            <ImageView id="03x03" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@imgs/BackgroundCarta.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Pane layoutX="-2.0" prefHeight="700.0" prefWidth="269.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Button layoutX="26.0" layoutY="637.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="102.0" text="Salvar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="32.0" layoutY="304.0" prefHeight="47.0" prefWidth="102.0" text="Jogador:">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="349.0" prefHeight="47.0" prefWidth="89.0" text="Pontos:">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="141.0" layoutY="349.0" prefHeight="47.0" prefWidth="102.0" text="Label">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="141.0" layoutY="304.0" prefHeight="47.0" prefWidth="102.0" text="Label">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button layoutX="137.0" layoutY="637.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="114.0" text="Recomeçar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="137.0" fitWidth="259.0" layoutX="13.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Separator layoutX="263.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="707.0" prefWidth="0.0" />
+   </children>
+</AnchorPane>
