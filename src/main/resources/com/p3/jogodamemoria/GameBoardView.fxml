@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.p3.jogodamemoria.JogoController">
+    <children>
+        <GridPane id="jogoGrid" fx:id="jogoGrid" layoutX="323.0" layoutY="18.0" prefHeight="664.0" prefWidth="520.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="1.0" prefWidth="130.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="130.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="130.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" prefWidth="130.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints maxHeight="230.0" minHeight="10.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+                <RowConstraints maxHeight="165.0" minHeight="3.0" prefHeight="165.0" valignment="CENTER" vgrow="NEVER" />
+            </rowConstraints>
+            <children>
+                <!-- Aqui ficam as cartas do jogo -->
+                <!-- Coloquei apenas uma parte como exemplo, as outras devem seguir o mesmo padrão -->
+                <ImageView id="00x00" fitHeight="149.0" fitWidth="113.0" onMouseClicked="#cartaListener" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imgs/BackgroundCarta.png" />
+                    </image>
+                    <GridPane.margin>
+                        <Insets bottom="15.0" />
+                    </GridPane.margin>
+                </ImageView>
+                <!-- Adicione mais ImageView's conforme necessário -->
+            </children>
+        </GridPane>
+        <Pane layoutX="-2.0" prefHeight="700.0" prefWidth="269.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <Button layoutX="26.0" layoutY="637.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="102.0" text="Salvar">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Label fx:id="labelJogador" layoutX="141.0" layoutY="304.0" prefHeight="47.0" prefWidth="102.0" text="Jogador">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+                <Label fx:id="labelPontos" layoutX="141.0" layoutY="349.0" prefHeight="47.0" prefWidth="102.0" text="Pontos">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Separator layoutX="263.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="707.0" prefWidth="0.0" />
+    </children>
+</AnchorPane>

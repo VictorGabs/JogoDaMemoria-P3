@@ -11,6 +11,7 @@ module com.p3.jogodamemoria {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires java.desktop;
 
     opens com.p3.jogodamemoria to javafx.fxml;
     exports com.p3.jogodamemoria;

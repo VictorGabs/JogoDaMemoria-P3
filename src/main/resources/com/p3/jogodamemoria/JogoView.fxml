@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.p3.jogodamemoria.JogoController">
+    <children>
+        <Label text="Nome do Jogador:"/>
+        <TextField fx:id="playerNameField" promptText="Insira o nome do jogador"/>
+        <Button fx:id="addPlayerButton" text="Adicionar Jogador" onAction="#addPlayer"/>
+        <ListView fx:id="playerList" prefHeight="150"/>
+<!--        <Button text="Iniciar Jogo" onAction="#iniciarJogo"/>-->
+        <Button fx:id="iniciarJogoButton" text="Iniciar Jogo" onAction="#iniciarJogo"/>
+        <Label text="Jogador Atual:"/>
+        <Label fx:id="labelJogador" text=""/>
+        <Label text="Pontos:"/>
+        <Label fx:id="labelPontos" text=""/>
+    </children>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+</VBox>
