@@ -5,22 +5,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.p3.jogodamemoria.JogoController">
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="892.0" spacing="10" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.p3.jogodamemoria.JogoController">
     <children>
-        <Label text="Nome do Jogador:"/>
-        <TextField fx:id="playerNameField" promptText="Insira o nome do jogador"/>
-        <Button fx:id="addPlayerButton" text="Adicionar Jogador" onAction="#addPlayer"/>
-        <ListView fx:id="playerList" prefHeight="150"/>
+      <ImageView fitHeight="238.0" fitWidth="508.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets bottom="70.0" />
+         </VBox.margin>
+         <image>
+            <Image url="@imgs/logo.png" />
+         </image>
+      </ImageView>
+        <Label text="Nome do Jogador:" />
+        <TextField fx:id="playerNameField" promptText="Insira o nome do jogador" />
+        <Button fx:id="addPlayerButton" onAction="#addPlayer" text="Adicionar Jogador" />
+        <ListView fx:id="playerList" prefHeight="150" />
 <!--        <Button text="Iniciar Jogo" onAction="#iniciarJogo"/>-->
-        <Button fx:id="iniciarJogoButton" text="Iniciar Jogo" onAction="#iniciarJogo"/>
-        <Label text="Jogador Atual:"/>
-        <Label fx:id="labelJogador" text=""/>
-        <Label text="Pontos:"/>
-        <Label fx:id="labelPontos" text=""/>
+        <Button fx:id="iniciarJogoButton" onAction="#iniciarJogo" text="Iniciar Jogo" />
     </children>
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 </VBox>

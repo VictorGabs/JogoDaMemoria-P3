@@ -80,8 +80,6 @@ public class JogoController {
     public void iniciarJogo() {
         if (!jogadores.isEmpty()) {
             jogadorAtual = jogadores.get(0);  // Inicia com o primeiro jogador
-            atualizarViewJogador();
-
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("jogoDaMemoriaView.fxml"));
                 Parent gameBoard = fxmlLoader.load();
@@ -94,6 +92,7 @@ public class JogoController {
                 Scene scene = new Scene(gameBoard);
                 stage.setScene(scene);
                 stage.show();
+                atualizarViewJogador();
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -139,22 +139,22 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="labelJogador" layoutX="141.0" layoutY="304.0" prefHeight="47.0" prefWidth="102.0" text="Jogador">
+            <Label fx:id="labelJogador" layoutX="59.0" layoutY="316.0" prefHeight="47.0" prefWidth="102.0" text="Jogador">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="labelPontos" layoutX="141.0" layoutY="349.0" prefHeight="47.0" prefWidth="102.0" text="Pontos">
+            <Label fx:id="labelPontos" layoutX="59.0" layoutY="432.0" prefHeight="47.0" prefWidth="102.0" text="Pontos">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="141.0" layoutY="349.0" prefHeight="47.0" prefWidth="102.0" text="">
+            <Label layoutX="59.0" layoutY="391.0" prefHeight="47.0" prefWidth="102.0" text="Pontos:">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="141.0" layoutY="304.0" prefHeight="47.0" prefWidth="102.0" text="">
+            <Label layoutX="59.0" layoutY="276.0" prefHeight="47.0" prefWidth="157.0" text="JogadorAtual:">
                <font>
                   <Font size="25.0" />
                </font>
