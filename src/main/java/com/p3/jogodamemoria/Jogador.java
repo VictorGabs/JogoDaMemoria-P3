@@ -25,4 +25,6 @@ public class Jogador {
     public void setPontos(int pontos) {
         this.pontos += 1;
     }
+
+    public void zerarPontos() {this.pontos =0;}
 }

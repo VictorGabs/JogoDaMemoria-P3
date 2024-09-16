@@ -1,10 +1,12 @@
 package com.p3.jogodamemoria;
 
 import javafx.animation.PauseTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
@@ -36,6 +38,13 @@ public class JogoController {
     private Label labelPontos;
 
     @FXML
+    private Label labelFimDeJogo;
+    @FXML
+    private Label jogadorAtualLabelDisplay;
+    @FXML
+    private Label pontosJogadorAtualLabelDisplay;
+
+    @FXML
     private GridPane jogoGrid;  // Referência ao GridPane no jogoDaMemoriaView.fxml
     Jogo jogo = new Jogo();
 
@@ -49,6 +58,8 @@ public class JogoController {
     int indexCarta2 = 0;
 
     List<String> historicoJogadas = new ArrayList<>();
+
+    Jogador jogadorVencedor = null;
 
     @FXML
     public void initialize() {
@@ -79,7 +90,8 @@ public class JogoController {
     @FXML
     public void iniciarJogo() {
         if (!jogadores.isEmpty()) {
-            jogadorAtual = jogadores.get(0);  // Inicia com o primeiro jogador
+            jogadorAtual = jogadores.getFirst();
+            System.out.println(jogadorVencedor);// Inicia com o primeiro jogador
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("jogoDaMemoriaView.fxml"));
                 Parent gameBoard = fxmlLoader.load();
@@ -104,6 +116,7 @@ public class JogoController {
     public void inicializarJogo(List<Jogador> jogadoresIniciais) {
         this.jogadores = jogadoresIniciais;
         this.jogadorAtual = jogadores.get(0);  // Inicia com o primeiro jogador
+        this.jogadorVencedor = jogadores.getFirst();
 
         Jogo jogo = new Jogo();
         tabuleiro = jogo.getTabuleiro();
@@ -130,6 +143,18 @@ public class JogoController {
         if (!jogoAcabou()) {
             checandoJogada(linhaSelecionada, colunaSelecionada, Integer.parseInt(imageView.getUserData().toString()));
         }
+        if(jogoAcabou()){
+            labelFimDeJogo.setVisible(true);
+            jogadorAtualLabelDisplay.setText("Vencedor:");
+            for(Jogador jogador : jogadores) {
+                if(jogador.getPontos() > jogadorVencedor.getPontos()) {
+                    jogadorVencedor = jogador;
+                }
+            }
+            labelJogador.setText(jogadorVencedor.getNome());
+            labelPontos.setText(String.valueOf(jogadorVencedor.getPontos()));
+        }
+
     }
 
      private boolean cartasEmVerificacao = false;  // Controla se as cartas estão sendo verificadas
@@ -156,8 +181,12 @@ public class JogoController {
             System.out.println("Segunda carta selecionada: Linha: " + linhaSelecionada + ", Coluna: " + colunaSelecionada + ", Valor: " + segundaCarta.getValor());
 
             cartasEmVerificacao = true;
+            for (int i = 0; i < jogoGrid.getChildren().size(); i++) {
+                ImageView imageView = (ImageView) jogoGrid.getChildren().get(i);
+                imageView.setDisable(true);
+            }
 
-            if (jogo.jogada(null, primeiraCarta, segundaCarta) == 1) {
+            if (jogo.jogada(primeiraCarta, segundaCarta) == 1) {
                 System.out.println("Par revelado!");
 
                 tabuleiro[primeiraCarta.getLinha()][primeiraCarta.getColuna()].setFoiCombinada(true);
@@ -178,6 +207,10 @@ public class JogoController {
                 segundaCarta = null;
 
                 cartasEmVerificacao = false;
+                for (int i = 0; i < jogoGrid.getChildren().size(); i++) {
+                    ImageView imageView = (ImageView) jogoGrid.getChildren().get(i);
+                    imageView.setDisable(false);  // Salva o índice do ImageView
+                }
 
             } else {
                 System.out.println("Par incorreto - Resetando cartas");
@@ -201,8 +234,13 @@ public class JogoController {
                     segundaCarta = null;
 
                     cartasEmVerificacao = false;
+                    for (int i = 0; i < jogoGrid.getChildren().size(); i++) {
+                        ImageView imageView = (ImageView) jogoGrid.getChildren().get(i);
+                        imageView.setDisable(false);  // Salva o índice do ImageView
+                    }
                 });
                 pause.play();
+
             }
         }
     }
@@ -243,5 +281,33 @@ public class JogoController {
             }
         }
         return true;
+    }
+    @FXML
+    public void reinicializarJogo(ActionEvent actionEvent) {
+        this.jogadorAtual = jogadores.get(0);  // Inicia com o primeiro jogador
+        this.jogadorVencedor = jogadores.getFirst();
+
+        Jogo jogo = new Jogo();
+        tabuleiro = jogo.getTabuleiro();
+        jogo.inicializarTabuleiro();
+
+        for (int i = 0; i < jogoGrid.getChildren().size(); i++) {
+            ImageView imageView = (ImageView) jogoGrid.getChildren().get(i);
+            String caminho = imageView.getImage().getUrl();
+            int fimUrl = caminho.lastIndexOf("/");
+            String path = caminho.substring(0, fimUrl + 1) + "BackgroundCarta.png";
+            imageView.setImage(new Image(path));
+            imageView.setUserData(i);  // Salva o índice do ImageView
+        }
+        labelFimDeJogo.setVisible(false);
+        for (Jogador jogador : jogadores) {
+            jogador.zerarPontos();
+        }
+        for(int i = 0; i<4;i++){
+            for(int j = 0; j<4;j++){
+                tabuleiro[i][j].foiCombinada = false;
+            }
+        }
+        atualizarViewJogador();
     }
 }

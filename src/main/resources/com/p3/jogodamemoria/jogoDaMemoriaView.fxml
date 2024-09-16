@@ -139,27 +139,27 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="labelJogador" layoutX="59.0" layoutY="316.0" prefHeight="47.0" prefWidth="102.0" text="Jogador">
+            <Label fx:id="labelJogador" layoutX="58.0" layoutY="358.0" prefHeight="47.0" prefWidth="102.0" text="Jogador">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="labelPontos" layoutX="59.0" layoutY="432.0" prefHeight="47.0" prefWidth="102.0" text="Pontos">
+            <Label fx:id="labelPontos" layoutX="58.0" layoutY="474.0" prefHeight="47.0" prefWidth="102.0" text="Pontos">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="391.0" prefHeight="47.0" prefWidth="102.0" text="Pontos:">
+            <Label fx:id="pontosJogadorAtualLabelDisplay" layoutX="58.0" layoutY="433.0" prefHeight="47.0" prefWidth="102.0" text="Pontos:">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="276.0" prefHeight="47.0" prefWidth="157.0" text="JogadorAtual:">
+            <Label fx:id="jogadorAtualLabelDisplay" layoutX="58.0" layoutY="318.0" prefHeight="47.0" prefWidth="157.0" text="JogadorAtual:">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Button layoutX="137.0" layoutY="637.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="114.0" text="Recomeçar">
+            <Button fx:id="btnRecomecar" layoutX="137.0" layoutY="637.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="114.0" onAction="#reinicializarJogo" text="Recomeçar">
                <font>
                   <Font size="18.0" />
                </font>
@@ -169,6 +169,11 @@
                   <Image url="@imgs/logo.png" />
                </image>
             </ImageView>
+            <Label fx:id="labelFimDeJogo" layoutX="58.0" layoutY="244.0" prefHeight="35.0" prefWidth="157.0" style="visibility: hidden;" text="Fim de Jogo!">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Separator layoutX="263.0" layoutY="-3.0" orientation="VERTICAL" prefHeight="707.0" prefWidth="0.0" />

@@ -56,7 +56,7 @@ public class Jogo {
         return true;
     }
 
-    public int jogada(Jogador jogador, Carta carta1, Carta carta2){
+    public int jogada(Carta carta1, Carta carta2){
         if(carta1.getValor().equals(carta2.getValor())){
             if (carta1.getFoiCombinada() == false && carta2.getFoiCombinada() == false){
                 //TODO: Metodo/funcionalidade de salvar jogada                  [x] - historico de jogadas
